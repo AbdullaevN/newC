@@ -1,0 +1,24 @@
+.img-wrap {
+  position: relative;
+  margin: 0;
+  width: 100%;
+}
+
+.img-wrap h1 {
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 120px;
+  top: 0;
+  font-weight: 900;
+}
+.img-responsive {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}

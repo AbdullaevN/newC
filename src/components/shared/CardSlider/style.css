@@ -1,0 +1,44 @@
+.slider {
+  margin: 0 20px;
+  overflow: "hidden";
+  padding: 2rem 0;
+}
+
+.slider img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.react-multi-carousel-list {
+  padding: 0rem 0 2rem 0;
+}
+
+.custom-dot-list-style button {
+  border: none;
+  background: rgb(255, 68, 68);
+}
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  background: rgb(255, 68, 68) !important;
+}
+
+.button-show {
+  border-radius: 5rem;
+  border: 1px solid #ff961f;
+  background: #ff961f;
+  color: white;
+  font-size: 18px;
+}
+
+.button-call {
+  border-radius: 5rem;
+  border: 1px solid #ff961f;
+  background: #ff961f;
+  color: white;
+  font-size: 18px;
+}
+
+.button-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

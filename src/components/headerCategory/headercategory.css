@@ -1,0 +1,14 @@
+.header-category {
+  display: flex;
+  justify-content: space-around;
+  gap: 2;
+  padding: 4px 5px;
+  background: white;
+  flex-wrap: wrap;
+}
+.header-category_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}

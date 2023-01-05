@@ -1,0 +1,24 @@
+.component-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  align-items: center;
+}
+
+.component-head_bold {
+  font-weight: 700;
+}
+.component-head_orange {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.component-head_text {
+  color: orange;
+  font-weight: 700;
+}
+
+.component-head_image {
+  object-fit: contain;
+  padding: 0px 10px;
+}

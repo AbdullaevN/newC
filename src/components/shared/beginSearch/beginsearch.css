@@ -1,0 +1,33 @@
+.component-search {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3px 7px;
+  background: #dce1eb;
+}
+.component-search_title-bold {
+  font-weight: bold;
+}
+.component-search-label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.component-search-label_input {
+  color: #999999;
+  display: block;
+  background: #f5f8f9;
+  border: none;
+  border-radius: 5rem;
+  padding-left: 4px;
+  padding: 6px;
+  outline: none;
+}
+
+.component-search-label_image {
+  position: absolute;
+  outline: none;
+  height: 2px;
+}
