@@ -15,6 +15,16 @@ export const HomePage = () => {
 
         <BusinessProfile />
         <CardSlider />
+
+        {/*  */}
+        <CarouselSlider />
+        <CardSlider />
+
+        <CarouselSlider />
+        <CardSlider />
+        <CardSlider />
+
+        {/*  */}
         <CarouselSlider />
       </div>
     </>

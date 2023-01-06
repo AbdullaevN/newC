@@ -78,3 +78,16 @@
 .tab-text {
   color: #999999;
 }
+
+@media (max-width: 480px) {
+  .news-home_large-card {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .news-home_large-small-cards {
+    display: flex;
+    width: 100%;
+  }
+}

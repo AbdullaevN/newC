@@ -21,7 +21,8 @@ export const NewsCity = () => {
           <Col>
             <NewsTab />
           </Col>
-          <Col className="col-7 news-home_large-card">
+          {/* <div className="news-home-responsive"> */}
+          <Col className="col-7  news-home_large-card">
             <div>
               <div>
                 <img src={cardLarge} alt="" />
@@ -51,7 +52,7 @@ export const NewsCity = () => {
               </div>
             </div>
           </Col>
-          <Col className="col-3">
+          <Col className="col-3 news-home_large-small-cards">
             <div className="">
               <Col className="news-small">
                 <div className="news-minicard">
@@ -127,6 +128,7 @@ export const NewsCity = () => {
               </Col>
             </div>
           </Col>
+          {/* </div> */}
         </Row>
       </Container>
     </>
