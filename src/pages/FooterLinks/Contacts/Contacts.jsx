@@ -4,6 +4,11 @@ export const Contacts = () => {
   return (
     <>
       <div>Contacts</div>
+
+      <div>
+        <div></div>
+        <div></div>
+      </div>
     </>
   );
 };

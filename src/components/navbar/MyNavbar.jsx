@@ -18,8 +18,30 @@ import axios from "axios";
 
 function MyNavbar() {
   const [weatherdata, setweatherData] = useState({});
+  const [kgsUsd, setKgsUsd] = useState();
+  const [kgsEur, setKgsEur] = useState();
 
-  //
+  useEffect(() => {
+    getCurrency();
+  }, []);
+
+  const getCurrency = async (props) => {
+    const resultUSD = await axios.get(
+      "https://v6.exchangerate-api.com/v6/1e7cf64bfbea115cf5c534ee/latest/USD"
+    );
+    const resultEUR = await axios.get(
+      "https://v6.exchangerate-api.com/v6/1e7cf64bfbea115cf5c534ee/latest/EUR"
+    );
+    // const kgsUsd = Math.round(resultUSD.data.conversion_rates.KGS);
+    const kgsUsd = resultUSD.data.conversion_rates.KGS.toFixed(2);
+    const kgsEur = resultEUR.data.conversion_rates.KGS.toFixed(2);
+
+    setKgsUsd(kgsUsd);
+    setKgsEur(kgsEur);
+  };
+
+  console.log(kgsUsd);
+  console.log(kgsEur);
 
   const menuData = [
     {
@@ -62,6 +84,13 @@ function MyNavbar() {
               <img src={logo} alt="" />
             </Link>
           </Navbar.Brand>
+          <Nav style={{ display: "flex", gap: "13px" }}>
+            <span>{kgsUsd}</span>
+            <br />
+
+            <span>{kgsEur}</span>
+          </Nav>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
@@ -85,6 +114,15 @@ function MyNavbar() {
               </label>
             </Nav>
 
+            {/* <iframe
+              src="http://www.nbkr.kg/service.jsp?sname=CurVal&width=193&is_image=false&height=138&lang=RUS"
+              scrolling="no"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              width="193"
+              height="138"
+            ></iframe> */}
             <Nav className="ms-auto navbar-third">
               <div className="navbar-cloud">
                 <img src={cloud} className="cloud" alt="" />

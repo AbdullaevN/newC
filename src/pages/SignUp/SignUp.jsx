@@ -1,23 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
-
-import { signInWithGoogle } from "../../firebase";
-// import { auth, signInWithGoogle } from "../../firebase";
-
-// import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+// import { Link } from "react-router-dom";
+// import logo from "../../assets/images/logo.png";
+import { auth } from "../../firebase";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 export const SignUp = () => {
-  // const signUpWithFacebook = () => {
-  //   const provider = new FacebookAuthProvider();
-  //   signInWithPopup(auth, provider)
-  //     .then((re) => {
-  //       console.log(re);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     });
-  // };
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((re) => {
+        console.log(re);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  console.log();
   return (
     <>
       <section className="">
@@ -100,22 +98,6 @@ export const SignUp = () => {
                             </label>
                           </div>
                         </div>
-
-                        {/* <div className="form-check d-flex justify-content-center mb-5">
-                          <input
-                            className="form-check-input me-2"
-                            type="checkbox"
-                            value=""
-                            id="form2Example3c"
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="form2Example3"
-                          >
-                            I agree all statements in{" "}
-                            <a href="#!">Terms of service</a>
-                          </label>
-                        </div> */}
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button

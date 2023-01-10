@@ -79,3 +79,47 @@
 .right-arrow {
   object-fit: contain;
 }
+
+/*  */
+.modal-body_paragraph {
+  font-size: 12px;
+}
+
+.modal-body_share {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-body_share-block {
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  gap: 13px;
+}
+.modal-body_share-block > img {
+  object-fit: contain;
+  width: 35px;
+}
+
+.modal-body_time {
+  display: flex;
+  justify-content: space-around;
+  gap: 13px;
+  flex-direction: row;
+}
+.modal-body_time-block > img {
+  object-fit: contain;
+  width: 19px;
+  height: 19px;
+}
+
+.modal-body_time-block {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

@@ -12,9 +12,9 @@ export const MyFooter = () => {
             <div className="row">
               <div className="col-lg-2 col-md-6 col-sm-6">
                 <div className="widget company-intro-widget">
-                  <a href="index.html" className="site-logo">
+                  <Link to={"/"} className="site-logo">
                     <img src={logo} alt="logo" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-3  col-md-6 col-sm-6">
@@ -127,28 +127,6 @@ export const MyFooter = () => {
             </div>
           </div>
         </div>
-        {/* <div className="footer-bottom">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 col-sm-6 text-sm-left text-center">
-              <span className="copy-right-text">
-                © 2019 <a href="https://codepen.io/anupkumar92">Anup</a> All
-                Rights Reserved.
-              </span>
-            </div>
-            <div className="col-md-6 col-sm-6">
-              <ul className="terms-privacy d-flex justify-content-sm-end justify-content-center">
-                <li>
-                  <Link to={'/'}>Terms & Conditions</Link>
-                </li>
-                <li>
-                  <Link to={'/'}>Privacy Policy</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> */}
       </footer>
     </>
   );

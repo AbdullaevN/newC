@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BeginSearch } from "../../../components/shared/beginSearch/BeginSearch";
 
 // import searchImage from "../../../assets/images/search.png";
@@ -6,8 +6,25 @@ import arrow from "../../../assets/images/arrowOrange.png";
 // import { Popup } from "../../../components/shared/popup/Popup";
 
 import "./services.css";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import ModalSlider from "../../../components/shared/modalSlider/ModalSlider";
+
+import map from "../../../assets/images/services/foundation_map.png";
+import share from "../../../assets/images/services/charm_share.png";
+import save from "../../../assets/images/services/save.png";
+import instagram from "../../../assets/images/services/bi_instagram.png";
+import call from "../../../assets/images/services/call.png";
+
+import mapOrange from "../../../assets/images/services/map-orange.png";
+import time from "../../../assets/images/services/time.png";
+import callOrange from "../../../assets/images/services/call-orange.png";
 
 export const Services = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <div className="">
@@ -25,7 +42,10 @@ export const Services = () => {
       </div>
       <BeginSearch />
 
-      <div className="services-content px-20  flex py-10 bg-[#DCE1EB]">
+      <div
+        className="services-content px-20  flex py-10 bg-[#DCE1EB]"
+        onClick={handleShow}
+      >
         <div className="services-content-main w-8/12 ">
           <div className="services-content-main_description flex rounded-2xl bg-white p-3 md:flex  justify-center items-center ">
             <div>
@@ -90,6 +110,111 @@ export const Services = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={show}
+        onHide={handleClose}
+        animation={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Art Clinic Бишкек - Пластическая хиррургия</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="d-flex">
+            <div className="d-flex ">
+              <span>4.9</span>
+              <img
+                src="https://banner2.cleanpng.com/20180411/oqq/kisspng-computer-icons-star-5-star-5acdd9ec67db40.8458493715234401084254.jpg"
+                alt=""
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  objectFit: "contain",
+                }}
+              />
+              <span>(32 отзыва)</span>
+            </div>
+            <div>Клиника пластической хиррургии</div>
+          </div>
+
+          <div className="d-flex">
+            <p className="modal-body_paragraph">
+              Представляя действительно лучшие клиники мира, рейтинг возглавляют
+              две израильские больницы — Ихилов и Ассута. Центр Ихилов
+              располагается в Тель-Авиве, из аэропорта на автомобиле сюда можно
+              доехать за 20-30 минут. Это один из крупнейших в Израиле
+              больничных комплексов, общая площадь клиники превышает 150 тысяч
+              квадратных метров. Ихилов входит в топ-10 лучших клиник Израиля
+              еще...{" "}
+            </p>
+          </div>
+
+          <div>
+            <ModalSlider />
+          </div>
+          <div className="d-flex modal-body_share ">
+            <div className="col-3 modal-body_share-block">
+              <img src={map} alt="" />
+              <span>Проложить маршрут</span>
+            </div>
+            <div className="col-3 modal-body_share-block">
+              <img src={share} alt="" />
+              <span>Поделиться</span>
+            </div>
+
+            <div className="col-3 modal-body_share-block">
+              <img src={save} alt="" />
+              <span>Сохранить</span>
+            </div>
+
+            <div className="col-3 modal-body_share-block">
+              <img src={instagram} alt="" />
+              <span>Соц.сети</span>
+            </div>
+
+            <div className="col-3 modal-body_share-block">
+              <img src={call} alt="" />
+              <span>Связаться</span>
+            </div>
+          </div>
+          {/*  */}
+          <div className="modal-body_time">
+            <div className="modal-body_time-block">
+              <img src={mapOrange} alt="" />
+              <span>155 просп. Чуй, Бишкек</span>
+            </div>
+            <div className="modal-body_time-block">
+              <img src={time} alt="" />
+              <span>Открыто</span>
+              <span>Закроется в 22:00</span>
+            </div>
+
+            <div className="modal-body_time-block">
+              <img src={callOrange} alt="" />
+              <span>0(555)-555-555</span>
+            </div>
+          </div>
+
+          {/*  */}
+          <div>
+            <div>Услуги в этой организации (34)</div>
+            <div>
+              <div></div>
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

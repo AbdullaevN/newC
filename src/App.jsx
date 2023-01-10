@@ -13,6 +13,19 @@ import { Realty } from "./pages/HeaderCategory/Realty/Realty";
 import { News } from "./pages/HeaderCategory/News/News";
 import { Job } from "./pages/HeaderCategory/Job/Job";
 import { HeaderCategory } from "./components/headerCategory/HeaderCategory";
+import { SignIn } from "./pages/SinIn/SignIn";
+import { About } from "./pages/FooterLinks/About/About";
+import { PrivacyPolicy } from "./pages/FooterLinks/PrivacyPolice/PrivacyPolice";
+import { PersonalData } from "./pages/FooterLinks/PersonalData/PersonalData";
+import { AboutPortal } from "./pages/FooterLinks/AboutPortal/AboutPortal";
+import { CityOrganization } from "./pages/FooterLinks/CityOrganization/CityOrganization";
+import { NewsPage } from "./pages/FooterLinks/News/News";
+import { Attraction } from "./pages/FooterLinks/Attraction/Attraction";
+import { Paid } from "./pages/FooterLinks/Paid/Paid";
+import { Advertising } from "./pages/FooterLinks/Advertising/Advertising";
+import { Cooperation } from "./pages/FooterLinks/Cooperation/Cooperation";
+import { Article } from "./pages/FooterLinks/Article/Article";
+import { Contacts } from "./pages/FooterLinks/Contacts/Contacts";
 
 const App = () => {
   return (
@@ -22,7 +35,7 @@ const App = () => {
         <HeaderCategory />
         <Routes>
           <Route path={"/"} element={<HomePage />} />
-          {/* <Route path={"/sign-in"} element={<SignIn />} /> */}
+          <Route path={"/sign-in"} element={<SignIn />} />
           <Route path={"/sign-up"} element={<SignUp />} />
 
           <Route path={"/directory"} element={<Directory />} />
@@ -34,6 +47,7 @@ const App = () => {
           <Route path={"/job"} element={<Job />} />
           {/*
 
+        */}
           <Route path={"/about"} element={<About />} />
           <Route path={"/privacy-policy"} element={<PrivacyPolicy />} />
           <Route path={"/personal-data"} element={<PersonalData />} />
@@ -46,7 +60,7 @@ const App = () => {
           <Route path={"/advertising"} element={<Advertising />} />
           <Route path={"/cooperation"} element={<Cooperation />} />
 
-          <Route path={"/contacts"} element={<Contacts />} /> */}
+          <Route path={"/contacts"} element={<Contacts />} />
         </Routes>
         <MyFooter />
       </BrowserRouter>
