@@ -82,9 +82,28 @@
   .dropdown-menu {
     width: 50%;
     background: red;
+    flex-direction: column;
     display: flex;
     top: 8rem;
     position: absolute !important;
     left: -50px !important;
+  }
+  .currency {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .search-input {
+    width: 20px;
+    width: 100%;
+  }
+  .navbar-third {
+    display: flex !important;
+  }
+}
+@media (min-width: 700px) {
+  .currency-dropdown {
+    display: none !important;
   }
 }

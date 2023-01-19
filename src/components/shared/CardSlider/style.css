@@ -26,7 +26,9 @@
   border: 1px solid #ff961f;
   background: #ff961f;
   color: white;
+  padding: 3px 13px;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .button-call {
@@ -41,4 +43,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.card-body_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.card-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delovoy-p {
+  font-size: 13px;
+  color: #999999;
+}
+.button-call {
+  /* left: 81.02%;
+  right: 5.42%;
+  top: 85.11%;
+  bottom: 4.26%; */
+
+  background: #ff961f;
+  border-radius: 50px;
+  width: 40px;
+}
+.button-call > img {
+  width: 30px;
+  height: 30px;
 }

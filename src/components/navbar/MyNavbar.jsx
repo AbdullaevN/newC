@@ -20,6 +20,7 @@ function MyNavbar() {
   const [weatherdata, setweatherData] = useState({});
   const [kgsUsd, setKgsUsd] = useState();
   const [kgsEur, setKgsEur] = useState();
+  const [kgsRub, setKgsRub] = useState();
 
   useEffect(() => {
     getCurrency();
@@ -32,12 +33,17 @@ function MyNavbar() {
     const resultEUR = await axios.get(
       "https://v6.exchangerate-api.com/v6/1e7cf64bfbea115cf5c534ee/latest/EUR"
     );
+    const resultRUB = await axios.get(
+      "https://v6.exchangerate-api.com/v6/1e7cf64bfbea115cf5c534ee/latest/RUB"
+    );
     // const kgsUsd = Math.round(resultUSD.data.conversion_rates.KGS);
     const kgsUsd = resultUSD.data.conversion_rates.KGS.toFixed(2);
     const kgsEur = resultEUR.data.conversion_rates.KGS.toFixed(2);
+    const kgsRub = resultRUB.data.conversion_rates.KGS.toFixed(2);
 
     setKgsUsd(kgsUsd);
     setKgsEur(kgsEur);
+    setKgsRub(kgsRub);
   };
 
   console.log(kgsUsd);
@@ -75,6 +81,7 @@ function MyNavbar() {
     getData();
   }, []);
 
+  const ee = String.fromCharCode(8364);
   return (
     <>
       <Navbar bg="light" expand="lg" className="navbar">
@@ -84,11 +91,15 @@ function MyNavbar() {
               <img src={logo} alt="" />
             </Link>
           </Navbar.Brand>
-          <Nav style={{ display: "flex", gap: "13px" }}>
-            <span>{kgsUsd}</span>
+          <Nav style={{ display: "flex", gap: "13px" }} className="currency">
+            <span>$ &nbsp; {kgsUsd}</span>
             <br />
 
-            <span>{kgsEur}</span>
+            <span>
+              {ee} &nbsp;
+              {kgsEur}
+            </span>
+            <span>₽ &nbsp; {kgsRub}</span>
           </Nav>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -123,7 +134,7 @@ function MyNavbar() {
               width="193"
               height="138"
             ></iframe> */}
-            <Nav className="ms-auto navbar-third">
+            <Nav className="ms-auto navbar-third d-flex" style={{}}>
               <div className="navbar-cloud">
                 <img src={cloud} className="cloud" alt="" />
                 <span>{`${Math.round(weatherdata?.main?.temp)}`}&deg;C</span>
@@ -131,6 +142,18 @@ function MyNavbar() {
               <div>
                 <img src={not} alt="" />
               </div>
+              {/* <Nav style={{ display: "flex", gap: "13px" }}> */}
+              <div className="currency-dropdown">
+                <span>$&nbsp;{kgsUsd}</span>
+                <br />
+
+                <span>
+                  {ee}&nbsp;
+                  {kgsEur}
+                </span>
+                <span>₽ &nbsp; {kgsRub}</span>
+              </div>
+              {/* </Nav> */}
               <NavDropdown
                 className="navbar-dropdown"
                 title={

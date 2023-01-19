@@ -19,6 +19,7 @@ import call from "../../../assets/images/services/call.png";
 import mapOrange from "../../../assets/images/services/map-orange.png";
 import time from "../../../assets/images/services/time.png";
 import callOrange from "../../../assets/images/services/call-orange.png";
+import { Pagination } from "../../../components/shared/pagination/Pagination";
 
 export const Services = () => {
   const [show, setShow] = useState(false);
@@ -111,6 +112,10 @@ export const Services = () => {
         </div>
       </div>
 
+      <div className="container">
+        <Pagination />
+      </div>
+
       <Modal
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -123,7 +128,7 @@ export const Services = () => {
           <Modal.Title>Art Clinic Бишкек - Пластическая хиррургия</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="d-flex">
+          <div className="d-flex modal-body">
             <div className="d-flex ">
               <span>4.9</span>
               <img
@@ -199,10 +204,37 @@ export const Services = () => {
           </div>
 
           {/*  */}
-          <div>
+          <div className="d-flex modal-body_uslugi">
             <div>Услуги в этой организации (34)</div>
             <div>
-              <div></div>
+              <div className="d-flex modal-body_uslugi-content">
+                <div className="col-2">
+                  <img
+                    className="modal-body_uslugi-image"
+                    src="https://avatars.mds.yandex.net/i?id=53caacb6ce47485648fdc851e3045fda-3798236-images-thumbs&n=13"
+                    alt=""
+                  />
+                </div>
+                <div className="col-7 modal-body_uslugi-content_info">
+                  <div>
+                    {" "}
+                    <span>Строительство и ремонт</span>
+                    Сварка
+                  </div>
+                  <span>Сварка, Трубы, Монтаж, Гарантия, Демонтаж</span>
+                  <p>
+                    Сделаем все быстро, качественно и дешево, обращайтесь по
+                    номеру ...
+                  </p>
+                  <img src="" alt="" />
+                  <h1>450 KGS</h1>
+                </div>
+
+                <div className="d-flex modal-body_uslugi-share col-3">
+                  <div>связаться</div>
+                  <div>Отзывы</div>
+                </div>
+              </div>
             </div>
           </div>
         </Modal.Body>

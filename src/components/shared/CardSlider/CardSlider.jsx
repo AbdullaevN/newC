@@ -57,7 +57,7 @@ const CardSlider = () => {
           autoPlay={true}
           swipeable={true}
           draggable={true}
-          showDots={true}
+          showDots={false}
           infinite={true}
           partialVisible={false}
           dotListClass="custom-dot-list-style"
@@ -73,10 +73,24 @@ const CardSlider = () => {
                     src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
                   />
                   <div className="card-body">
-                    <h4 className="card-title flex place-content-start font-bold">
-                      Кофейня №1
-                    </h4>
-                    <span className="flex place-content-start text-sm">
+                    <div className="card-body_title">
+                      <h5 className="card-title flex place-content-start font-bold">
+                        Кофейня №1
+                      </h5>
+                      <div className="d-flex card-star">
+                        <img
+                          style={{
+                            objectFit: "contain",
+                            width: "15px",
+                          }}
+                          src="https://assets.onlinelabels.com/images/clip-art/nicubunu/nicubunu_Star.png"
+                          alt=""
+                        />
+                        <span>4.5</span>
+                      </div>
+                    </div>
+
+                    <span className="flex place-content-start text-sm delovoy-p">
                       Деловой партнер
                     </span>
                     <div className="button-card">

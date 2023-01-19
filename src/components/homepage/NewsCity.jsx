@@ -23,37 +23,39 @@ export const NewsCity = () => {
           </Col>
           {/* <div className="news-home-responsive"> */}
           <Col className="col-7  news-home_large-card">
-            <div>
-              <div>
-                <img src={cardLarge} alt="" />
-                <div className="d-flex news_large-card_info">
-                  <div>№1 в вкладке “Популярные” </div>
-                  <div className="d-flex news_large-card_share">
-                    <div>
-                      <img src={eyes} alt="" />
-                      1.5 М
-                    </div>
-                    <div>
-                      <img src={message} alt="" />
-                      35K
-                    </div>
-                    <div>
-                      <img src={share} alt="" />
-                      35K
-                    </div>
-                  </div>
+            {/* <div> */}
+            {/* <div> */}
+            <img src={cardLarge} alt="" />
+            <div className="d-flex news_large-card_info">
+              <div className="news_large-card_info_title">
+                №1 в вкладке “Популярные”{" "}
+              </div>
+              <div className="d-flex news_large-card_share">
+                <div className="card_share-info">
+                  <img src={eyes} alt="" />
+                  1.5 М
                 </div>
-                <div>
-                  <span className="news_large-card_title">
-                    Министерство труда намерено применить опыт Китая в борьбе с
-                    бедностью
-                  </span>
+                <div className="card_share-info">
+                  <img src={message} alt="" />
+                  35K
+                </div>
+                <div className="card_share-info">
+                  <img src={share} alt="" />
+                  35K
                 </div>
               </div>
             </div>
+            <div>
+              <span className="news_large-card_title">
+                Министерство труда намерено применить опыт Китая в борьбе с
+                бедностью
+              </span>
+            </div>
+            {/* </div> */}
+            {/* </div> */}
           </Col>
           <Col className="col-3 news-home_large-small-cards">
-            <div className="">
+            <div className="small-card-responsive">
               <Col className="news-small">
                 <div className="news-minicard">
                   <div>

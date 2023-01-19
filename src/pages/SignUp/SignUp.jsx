@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 // import logo from "../../assets/images/logo.png";
-import { auth } from "../../firebase";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+import { useAuth0 } from "@auth0/auth0-react";
+import LogoutButton from "../../components/shared/Login/LogoutButton";
+import LoginButton from "../../components/shared/Login/LoginButton";
+import Profile from "../../components/shared/Login/Profile";
 
 export const SignUp = () => {
+  const { isLoading, error } = useAuth0();
+
   const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
@@ -15,7 +20,8 @@ export const SignUp = () => {
         console.log(e);
       });
   };
-  console.log();
+
+  console.log(error);
   return (
     <>
       <section className="">
@@ -47,7 +53,6 @@ export const SignUp = () => {
                             </label>
                           </div>
                         </div>
-
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -64,7 +69,6 @@ export const SignUp = () => {
                             </label>
                           </div>
                         </div>
-
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -81,7 +85,6 @@ export const SignUp = () => {
                             </label>
                           </div>
                         </div>
-
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -98,7 +101,6 @@ export const SignUp = () => {
                             </label>
                           </div>
                         </div>
-
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="button"
@@ -107,9 +109,26 @@ export const SignUp = () => {
                             Регистрация
                           </button>
                         </div>
-
                         <div>
                           <button onClick={signInWithGoogle}>GOOGLE</button>
+                        </div>
+
+                        <div>
+                          <h1>auth0</h1>
+
+                          {error && <p>Authentication Error</p>}
+                          {!error && isLoading && <p>Loading ... </p>}
+                          {!error && !isLoading && (
+                            <>
+                              <LogoutButton />
+
+                              <LoginButton />
+
+                              <Profile />
+
+                              {error && <>{error}</>}
+                            </>
+                          )}
                         </div>
                         <div>
                           {/* <button onClick={signUpWithFacebook}>Google</button> */}
